@@ -11,4 +11,4 @@ npm start
 ```
 
 #### Burger Builder
-Build-a-Burger type project. This Appplication allows users to add ingredients to a burger and order the burger. Add add up all ingredients and calculates total price of the end burger.
+Build-a-Burger type project. This Appplication allows users to add ingredients to a burger and order the burger. The App lists all ingredients ordered and calculates total price of the burger.
