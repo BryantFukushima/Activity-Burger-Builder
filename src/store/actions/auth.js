@@ -2,6 +2,8 @@ import axios from "axios";
 
 import * as actionTypes from "./actionTypes";
 
+require('dotenv').config();
+
 export const authStart = () => {
     return {
         type: actionTypes.AUTH_START
@@ -49,10 +51,10 @@ export const auth = (email, password, isSignup) => {
             returnSecureToken: true
         };
         let url =
-            "https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=AIzaSyCCkiKeF42eVSSymKVDPJXwr9-DGOKo9IQ";
+            "https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=" + process.env.REACT_APP_AUTH_KEY;
         if (!isSignup) {
             url =
-                "https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=AIzaSyCCkiKeF42eVSSymKVDPJXwr9-DGOKo9IQ";
+                "https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=" + process.env.REACT_APP_AUTH_KEY;
         }
         axios
             .post(url, authData)
